@@ -46,5 +46,20 @@ class CalculationsController < ApplicationController
        render ("calculations/flexible_random.html.erb")
        
     end 
+    
+    def square_form
+       
+       render ("calculations/square_form_template.html.erb")
+       
+    end
+    
+    def process_square
+       
+       @input_number = params["user_number"].to_i
+       @number_squared = params["user_number"].to_i ** 2
+
+       render ("calculations/square_results.html.erb")
+       
+    end
 
 end
