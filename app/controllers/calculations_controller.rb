@@ -26,7 +26,7 @@ class CalculationsController < ApplicationController
     def flex_monthly_payment
        
        @basis_points = params["basis_points"].to_i
-       @r = @basis_points * 0.0001
+       @r = @basis_points / 12 
        @years = params["number_of_years"].to_i
        @pv = params["present_value"].to_i
        
@@ -42,8 +42,8 @@ class CalculationsController < ApplicationController
        @min = params["min"]
        @max = params["max"]
        
-       @random = 0
-
+       @random = rand(1) * (@max - @min) + @min
+       
        render ("calculations/flexible_random.html.erb")
        
     end 
