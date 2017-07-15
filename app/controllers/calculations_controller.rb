@@ -28,9 +28,11 @@ class CalculationsController < ApplicationController
        @basis_points = params["basis_points"].to_f
        @r = @basis_points / 12 
        @years = params["number_of_years"].to_f
+       @months = @years * 12 
        @pv = params["present_value"].to_f
        
-       @payment = ( @r * @pv ) / ( 1 - ((1 + @r) ** (-1 * @years)))
+       @payment = ( @r * @pv ) / ( 1 - ((1 + @r) ** (-1 * @months)))
+       
        @payment = @payment.to_f
        
        render ("calculations/flexible_payment.html.erb")
@@ -89,9 +91,11 @@ class CalculationsController < ApplicationController
        @basis_points = params["basis_points"].to_f
        @r = @basis_points / 12 
        @years = params["number_of_years"].to_f
+       @months = @years * 12 
        @pv = params["present_value"].to_f
        
-       @payment = ( @r * @pv ) / ( 1 - ((1 + @r) ** (-1 * @years)))
+       @payment = ( @r * @pv ) / ( 1 - ((1 + @r) ** (-1 * @months)))
+       
        @payment = @payment.to_f
 
     render ("calculations/payment_results.html.erb")
