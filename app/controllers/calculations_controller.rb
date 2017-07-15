@@ -88,7 +88,7 @@ class CalculationsController < ApplicationController
     def process_payment
        
        @basis_points = params["basis_points"].to_f
-       @apr = @basis_points / 100
+       @apr = @basis_points
        @r = @apr / 1200
        @years = params["number_of_years"].to_f
        @months = @years * 12 
