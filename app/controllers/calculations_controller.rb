@@ -40,10 +40,10 @@ class CalculationsController < ApplicationController
     
     def flex_random
        
-       @min = params["min"]
-       @max = params["max"]
+       @min = params["min"].to_f
+       @max = params["max"].to_f
        
-       @random = rand(1) * (@max - @min) + @min
+       @random = rand() * (@max - @min) + @min
        
        render ("calculations/flexible_random.html.erb")
        
@@ -100,5 +100,24 @@ class CalculationsController < ApplicationController
     render ("calculations/payment_results.html.erb")
        
     end
+    
+    
+    def process_random
+       
+       @min = params["min"].to_f
+       @max = params["max"].to_f
+       
+       @random = rand() * (@max - @min) + @min
+       
+       render ("calculations/random_results.html.erb")
+       
+    end
+    
+    def random_form
+       
+       render ("calculations/random_form_template.html.erb")
+       
+    end
+    
 
 end
