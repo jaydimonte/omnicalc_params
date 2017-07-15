@@ -1,0 +1,9 @@
+<h1> Payment Form Results </h1>
+
+<p> A <%= @years %> year loan of <%= number_to_currency(@pv) %>,
+with an annual interest rate of <%= number_to_percentage(@apr, precision: 4) %>,
+requires a monthly payment of <%= number_to_currency(@payment) %>. </p>
+
+
+
+<!--with an annual interest rate of <%= number_to_percentage(@apr, precision: 2) %>,-->

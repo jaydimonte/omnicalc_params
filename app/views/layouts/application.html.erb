@@ -6,6 +6,23 @@
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-1"> </a></div>
+        <div class="col-sm-2"><a href="/flexible/square/:number"> Flex square </a></div>
+        <div class="col-sm-2"><a href="/flexible/square_root/:number"> Flex square root </a></div>
+        <div class="col-sm-2"><a href="/flexible/payment/:basis_points/:number_of_years/:present_value"> Flex payment </a></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2"><a href="/square/new"> Square form </a></div>
+        <div class="col-sm-2"><a href="/square_root/new"> Square root form </a></div>
+        <div class="col-sm-2"><a href="/payment/new"> Payment form </a></div>
+        <div class="col-sm-2"><a href="/random/new"> Random form </a></div>
+    </div>
+</div>
+  
 </head>
 
 <body>
