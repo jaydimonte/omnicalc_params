@@ -16,7 +16,8 @@ class CalculationsController < ApplicationController
     def flex_square_root
        
        @input_number = params["number"].to_i
-       @number_square_rooted = params["number"].to_i ** 2
+       @number_square_rooted = params["number"].to_i
+       @number_square_rooted = Math.sqrt(@number_square_rooted)
 
        render ("calculations/flexible_square_root_template.html.erb")
        
