@@ -62,5 +62,20 @@ class CalculationsController < ApplicationController
        render ("calculations/square_results.html.erb")
        
     end
+    
+    def square_root_form
+       
+       render ("calculations/square_root_form_template.html.erb")
+       
+    end
+    
+    def process_square_root
+       
+       @input_number = params["user_number"].to_i
+       @number_square_rooted = Math.sqrt(@input_number)
+
+       render ("calculations/square_root_results.html.erb")
+       
+    end
 
 end

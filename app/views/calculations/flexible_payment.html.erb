@@ -1,3 +1,5 @@
 <h1> Flexible Payment</h1>
 
-<p> You will owe $<%= @payment %> each year.</p>
+<p> A <%= @years %> year loan of <%= number_to_currency(@pv) %>,
+with an annual interest rate of <%= number_to_percentage(@basis_points) %>, 
+requires a monthly payment of <%= number_to_currency(@payment) %>. </p>
